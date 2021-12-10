@@ -7,7 +7,7 @@ const CountdownTimer = ({ goLiveData }) => {
     const [timerString, setTimerString] = useState('');
 
     // Our useEffect will run on component load
-    useEffect(() => {
+    useEffect((goLiveData) => {
         console.log('Setting interval...');
 
 
@@ -38,7 +38,7 @@ const CountdownTimer = ({ goLiveData }) => {
 
                 // If our distance passes zero this means that it's drop time!
                 if (distance < 0) {
-                    console.log('Clearing interval...');
+                    console.log('Clearing interval....');
                     clearInterval(interval);
                 }
             }, 1000);
