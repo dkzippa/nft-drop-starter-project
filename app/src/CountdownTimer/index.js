@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import './CountdownTimer.css';
 
-const CountdownTimer = (props) => {
+const CountdownTimer = ({ goLiveData }) => {
+
     // State
     const [timerString, setTimerString] = useState('');
 
@@ -12,7 +13,7 @@ const CountdownTimer = (props) => {
 
         // Get the current date and dropDate in a JavaScript Date object
         const currentDate = new Date();
-        const dropDate1 = new Date(props.goLiveData);
+        const dropDate1 = new Date(goLiveData);
 
         // If currentDate is before dropDate, render our Countdown component
         if (currentDate < dropDate1) {
