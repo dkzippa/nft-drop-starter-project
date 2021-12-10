@@ -37,6 +37,13 @@ const CandyMachine = ({ walletAddress }) => {
   const [isLoadingMints, setIsLoadingMints] = useState(false);
 
 
+  useEffect(() => {
+    getCandyMachineState();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+
+
 
   // Actions
   const fetchHashTable = async (hash, metadataEnabled) => {
@@ -290,6 +297,43 @@ const CandyMachine = ({ walletAddress }) => {
     return provider;
   };
 
+
+
+
+  const renderMintedItems = () => (
+      <div className="gif-container">
+        <p className="sub-text">✨ Your Minted Items: </p>
+        <div className="gif-grid">
+          {mints.map((mint) => (
+              <div className="gif-item" key={mint}>
+                <a href={mint} target="_blank" rel="noreferrer">
+                  <img src={mint} alt={`Minted NFT ${mint}`} />
+                </a>
+              </div>
+          ))}
+        </div>
+      </div>
+  );
+
+
+  const renderDropTimer = () => {
+    // Get the current date and dropDate in a JavaScript Date object
+    const currentDate = new Date();
+    const dropDate = new Date(machineStats.goLiveData * 1000);
+
+    // If currentDate is before dropDate, render our Countdown component
+    if (currentDate < dropDate) {
+      console.log('Before drop date!');
+      // Don't forget to pass over your dropDate!
+      return <CountdownTimer dropDate={dropDate} />;
+    }
+
+    // Else let's just return the current drop date
+    return <p>{`Drop Date: ${machineStats.goLiveDateTimeString}`}</p>;
+  };
+
+
+
 // Declare getCandyMachineState as an async method
   const getCandyMachineState = async () => {
     const provider = getProvider();
@@ -359,48 +403,6 @@ const CandyMachine = ({ walletAddress }) => {
 
 
   };
-
-
-
-  const renderMintedItems = () => (
-      <div className="gif-container">
-        <p className="sub-text">✨ Your Minted Items: </p>
-        <div className="gif-grid">
-          {mints.map((mint) => (
-              <div className="gif-item" key={mint}>
-                <a href={mint} target="_blank">
-                  <img src={mint} alt={`Minted NFT ${mint}`} />
-                </a>
-              </div>
-          ))}
-        </div>
-      </div>
-  );
-
-
-  const renderDropTimer = () => {
-    // Get the current date and dropDate in a JavaScript Date object
-    const currentDate = new Date();
-    const dropDate = new Date(machineStats.goLiveData * 1000);
-
-    // If currentDate is before dropDate, render our Countdown component
-    if (currentDate < dropDate) {
-      console.log('Before drop date!');
-      // Don't forget to pass over your dropDate!
-      return <CountdownTimer dropDate={dropDate} />;
-    }
-
-    // Else let's just return the current drop date
-    return <p>{`Drop Date: ${machineStats.goLiveDateTimeString}`}</p>;
-  };
-
-
-
-
-  useEffect(() => {
-    getCandyMachineState();
-  }, []);
-
 
 
   return (
