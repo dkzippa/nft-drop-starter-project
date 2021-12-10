@@ -319,13 +319,13 @@ const CandyMachine = ({ walletAddress }) => {
   const renderDropTimer = () => {
     // Get the current date and dropDate in a JavaScript Date object
     const currentDate = new Date();
-    const dropDate = new Date(machineStats.goLiveData * 1000);
+    const dropDate1 = new Date(machineStats.goLiveData * 1000);
 
     // If currentDate is before dropDate, render our Countdown component
-    if (currentDate < dropDate) {
+    if (currentDate < dropDate1) {
       console.log('Before drop date!');
       // Don't forget to pass over your dropDate!
-      return <CountdownTimer dropDate={dropDate} />;
+      return <CountdownTimer dropDate={dropDate1} />;
     }
 
     // Else let's just return the current drop date
