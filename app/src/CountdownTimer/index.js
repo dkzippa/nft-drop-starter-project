@@ -55,7 +55,7 @@ const CountdownTimer = ({ goLiveData }) => {
 
         return null;
 
-    }, []);
+    }, [goLiveData]);
 
 
     return (
