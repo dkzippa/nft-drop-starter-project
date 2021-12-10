@@ -7,7 +7,7 @@ const CountdownTimer = ({ goLiveData }) => {
     const [timerString, setTimerString] = useState('');
 
     // Our useEffect will run on component load
-    useEffect((goLiveData) => {
+    useEffect(() => {
         console.log('Setting interval...');
 
 

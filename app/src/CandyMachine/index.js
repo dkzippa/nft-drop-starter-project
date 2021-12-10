@@ -385,7 +385,9 @@ const CandyMachine = ({ walletAddress }) => {
 
 
   useEffect(() => {
+    // eslint-disable-next-line
     getCandyMachineState();
+    // eslint-disable-next-line
   }, []);
 
 
