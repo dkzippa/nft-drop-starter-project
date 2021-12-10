@@ -37,12 +37,6 @@ const CandyMachine = ({ walletAddress }) => {
   const [isLoadingMints, setIsLoadingMints] = useState(false);
 
 
-  useEffect((getCandyMachineState) => {
-    getCandyMachineState();
-  }, [getCandyMachineState]);
-
-
-
 
   // Actions
   const fetchHashTable = async (hash, metadataEnabled) => {
@@ -387,6 +381,17 @@ const CandyMachine = ({ walletAddress }) => {
 
 
   };
+
+
+
+  useEffect((getCandyMachineState) => {
+    getCandyMachineState();
+  }, [getCandyMachineState]);
+
+
+
+
+
 
 
   return (
