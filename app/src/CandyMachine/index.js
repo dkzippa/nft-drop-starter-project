@@ -37,9 +37,9 @@ const CandyMachine = ({ walletAddress }) => {
   const [isLoadingMints, setIsLoadingMints] = useState(false);
 
 
-  useEffect(() => {
+  useEffect((getCandyMachineState) => {
     getCandyMachineState();
-  }, []);
+  }, [getCandyMachineState]);
 
 
 
