@@ -1,0 +1,19 @@
+{
+  "name": "UFO XY01B",
+  "symbol": "",
+  "image": "XY01B.png",
+  "properties": {
+    "files": [
+      {
+        "uri": "XY01B.png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "5UguL3rYNSMtUgvx9YPJoetnSomrc9yNipJATkzW4Pdp",
+        "share": 100
+      }
+    ]
+  }
+}

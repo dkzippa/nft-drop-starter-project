@@ -1,0 +1,19 @@
+{
+  "name": "UFO XYA04",
+  "symbol": "",
+  "image": "04.png",
+  "properties": {
+    "files": [
+      {
+        "uri": "04.png",
+        "type": "image/png"
+      }
+    ],
+    "creators": [
+      {
+        "address": "5UguL3rYNSMtUgvx9YPJoetnSomrc9yNipJATkzW4Pdp",
+        "share": 100
+      }
+    ]
+  }
+}
