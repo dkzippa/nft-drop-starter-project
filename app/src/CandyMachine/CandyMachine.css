@@ -3,6 +3,20 @@
   flex-direction: column;
 }
 
+.machine-drop-date{
+  font-size: 18pt;
+  font-weight: bold;
+  color: #4e44ce;
+}
+
+.machine-drop-numbers{
+  font-size: 16pt;
+  font-weight: bold;
+  color: #35aee2;
+}
+
+
+
 .gif-container {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState} from "react";
 import './App.css';
 import twitterLogo from './assets/twitter-logo.svg';
+import CandyMachine from './CandyMachine';
 
 // Constants
 const TWITTER_HANDLE = '_buildspace';
@@ -106,13 +107,18 @@ const App = () => {
             <p className="sub-text">TOP SECRET</p>
             <p className="header">UFO PROJECTS</p>
             <p className="sub-text">DECLASSIFIED</p>
-            <br/>
+
             {!walletAddress && renderNotConnectedContainer()}
           </div>
 
         </div>
 
         <div className="content-container">
+          <div className='mint-container'>
+
+            {walletAddress && <CandyMachine walletAddress={window.solana} />}
+
+          </div>
 
           <div className='partners-container'>
             <p className="partners-header">PARTNERS</p>
@@ -132,7 +138,6 @@ const App = () => {
             <img className='nft-thumb' alt='' src='images/nft1.png' onClick={connectWallet}/>
             <img className='nft-thumb' alt='' src='images/nft2.png' onClick={connectWallet}/>
             <img className='nft-thumb' alt='' src='images/nft3.png' onClick={connectWallet}/>
-            <img className='nft-thumb' alt='' src='images/nft5.png' onClick={connectWallet}/>
           </div>
           <p className="sub-text">It is only the beginning...
             After this drop, the community will get to vote on what NFT collectible we uncover next.
