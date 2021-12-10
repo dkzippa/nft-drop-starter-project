@@ -384,9 +384,9 @@ const CandyMachine = ({ walletAddress }) => {
 
 
 
-  useEffect((getCandyMachineState) => {
+  useEffect(() => {
     getCandyMachineState();
-  }, [getCandyMachineState]);
+  }, []);
 
 
 
