@@ -325,7 +325,7 @@ const CandyMachine = ({ walletAddress }) => {
     if (currentDate < dropDate1) {
       console.log('Before drop date!');
       // Don't forget to pass over your dropDate!
-      return <CountdownTimer dropDate={dropDate1} />;
+      return <CountdownTimer nftDropDate={dropDate1} />;
     }
 
     // Else let's just return the current drop date
@@ -407,9 +407,6 @@ const CandyMachine = ({ walletAddress }) => {
 
   return (
       machineStats && (<div className="machine-container">
-        {/*<p>*/}
-        {/*  Drop Date: <span className="machine-drop-date">{machineStats.goLiveDateTimeString}</span>*/}
-        {/*</p>*/}
         {renderDropTimer()}
         <p>
           Items Minted: <span className="machine-drop-numbers">{machineStats.itemsRedeemed} / {machineStats.itemsAvailable}</span>

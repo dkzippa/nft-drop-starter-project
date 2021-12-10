@@ -12,7 +12,7 @@ const CountdownTimer = (props) => {
         // Use setInterval to run this piece of code every second
         const interval = setInterval(() => {
             const currentDate = new Date().getTime();
-            const distance = props.dropDate - currentDate;
+            const distance = props.nftDropDate - currentDate;
 
             // Here it's as easy as doing some time math to get the different properties
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
